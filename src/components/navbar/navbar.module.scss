@@ -1,0 +1,8 @@
+.navbar {
+  & ul {
+    display: flex;
+    gap: 3rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+}

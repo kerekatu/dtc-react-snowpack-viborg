@@ -1,0 +1,30 @@
+.hero {
+  display: block;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(87, 162, 77, 0.6)
+    ),
+    url('/static/images/banner-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    color: var(--color-white);
+    height: 100%;
+  }
+
+  .description {
+    max-width: 58rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}

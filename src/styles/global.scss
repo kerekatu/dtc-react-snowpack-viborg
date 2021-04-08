@@ -1,0 +1,165 @@
+// MIXINS
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 46.875em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 65.625em) {
+      @content;
+    }
+  }
+}
+
+// VARIABLES
+
+:root {
+  --color-white: #fff;
+  --color-black: #111;
+  --color-primary: #6aaf09;
+  --color-gray: #f6f6f6;
+  --color-gray-2: #313131;
+
+  --page-width: 100rem;
+  --header-height: 7rem;
+}
+
+// RESET
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.58;
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+// LAYOUTS
+
+main {
+  & .container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: var(--header-height);
+  padding: 0 5rem;
+  z-index: 100;
+
+  width: 100%;
+  color: var(--color-white);
+
+  &.scroll {
+    background-color: var(--color-gray-2);
+  }
+
+  .header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--page-width);
+    height: inherit;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+// BUTTONS
+
+.btn_primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-transform: uppercase;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+// TYPOGRAPHY
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.28;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.8rem;
+  position: relative;
+  font-weight: 700;
+
+  & > .green {
+    color: var(--color-primary);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 6rem;
+    height: 0.2rem;
+    background-color: var(--color-primary);
+  }
+}
