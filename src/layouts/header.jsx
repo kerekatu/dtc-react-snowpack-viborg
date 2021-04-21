@@ -3,11 +3,13 @@ import Navbar from '@/components/navbar/navbar'
 import { Link } from 'react-router-dom'
 import CONSTANTS from '@/lib/constants'
 
-const Header = () => {
+const Header = ({ stickyHeader = false }) => {
   const [headerScroll, setHeaderScroll] = useState(false)
   const [headerPos, setHeaderPos] = useState(0)
 
   useEffect(() => {
+    if (!stickyHeader) return
+
     function handleHeaderScroll() {
       const currentTopPos = window.scrollY
 
@@ -23,10 +25,10 @@ const Header = () => {
     }
 
     return () => window.removeEventListener('scroll', handleHeaderScroll)
-  }, [headerPos])
+  }, [headerPos, stickyHeader])
 
   return (
-    <header className={headerScroll && 'scroll'}>
+    <header className={headerScroll ? 'scroll' : !stickyHeader ? 'static' : ''}>
       <div className="header_content">
         <Link to="/" className="logo">
           {CONSTANTS.content.company_name}

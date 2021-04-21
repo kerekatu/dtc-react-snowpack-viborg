@@ -26,11 +26,15 @@
   --color-white: #fff;
   --color-black: #111;
   --color-primary: #6aaf09;
+  --color-primary-2: #79b72d;
   --color-gray: #f6f6f6;
   --color-gray-2: #313131;
+  --color-gray-3: #e6e6e6;
 
   --page-width: 100rem;
   --header-height: 7rem;
+
+  --transition: 0.2s ease-in-out;
 }
 
 // RESET
@@ -52,8 +56,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
   line-height: 1.58;
-  background-color: var(--color-white);
+  background-color: var(--color-gray);
   min-height: 100vh;
+  color: var(--color-gray-2);
 }
 
 a {
@@ -72,6 +77,15 @@ textarea {
   font-family: 'Open Sans', sans-serif;
 }
 
+input,
+textarea {
+  border: 0.1rem solid var(--color-gray-3);
+  background-color: var(--color-white);
+  color: var(--color-gray-2);
+  padding: 1.5rem;
+  font-size: 1.4rem;
+}
+
 button {
   font-size: 1.4rem;
   line-height: 1;
@@ -81,6 +95,8 @@ button {
 // LAYOUTS
 
 main {
+  height: calc(100vh - var(--header-height));
+
   & .container {
     max-width: var(--page-width);
     margin: 0 auto;
@@ -99,6 +115,11 @@ header {
   color: var(--color-white);
 
   &.scroll {
+    background-color: var(--color-gray-2);
+  }
+
+  &.static {
+    position: static;
     background-color: var(--color-gray-2);
   }
 
@@ -127,6 +148,23 @@ header {
   padding: 1.5rem;
   border-radius: 0.6rem;
   letter-spacing: 0.1rem;
+  transition: all var(--transition);
+}
+
+.btn_secondary {
+  background-color: var(--color-gray-3);
+  color: var(--color-gray-2);
+  text-transform: uppercase;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+  letter-spacing: 0.1rem;
+  transition: all var(--transition);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
 }
 
 // TYPOGRAPHY
@@ -148,6 +186,7 @@ h2 {
   font-size: 2.8rem;
   position: relative;
   font-weight: 700;
+  margin-bottom: 5rem;
 
   & > .green {
     color: var(--color-primary);
@@ -161,5 +200,22 @@ h2 {
     width: 6rem;
     height: 0.2rem;
     background-color: var(--color-primary);
+  }
+
+  &.white {
+    color: var(--color-white);
+
+    &::after {
+      background-color: var(--color-white);
+    }
+  }
+
+  &.center {
+    text-align: center;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

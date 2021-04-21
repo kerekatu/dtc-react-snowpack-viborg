@@ -1,0 +1,48 @@
+.reviews {
+  background: linear-gradient(rgba(106, 175, 9, 0.7), rgba(106, 175, 9, 0.7)),
+    url('/static/images/udtalelser-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: min-content;
+  padding: 10rem 0;
+  color: var(--color-white);
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .testimonials {
+    margin-top: 3rem;
+  }
+
+  .reviews_list {
+    & > p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .pagination {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 0 1rem;
+
+    &_dot {
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 100%;
+      border: 0.1rem solid var(--color-white);
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    &_dot.active {
+      background-color: var(--color-white);
+    }
+  }
+}

@@ -26,7 +26,8 @@ module.exports = {
     '@/components/': './src/components',
     '@/layouts/': './src/layouts',
     '@/lib/': './src/lib',
-    '@/pages/': './src/pages',
+    '@/routes/': './src/routes',
     '@/styles/': './src/styles',
   },
+  routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
 }

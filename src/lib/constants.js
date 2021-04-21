@@ -5,7 +5,7 @@ const CONSTANTS = {
       { link: '#about', label: 'Om Os' },
       { link: '#services', label: 'Ydelser' },
       { link: '#gallery', label: 'Galleri' },
-      { link: '#testimonials', label: 'Det siger kunderne' },
+      { link: '#reviews', label: 'Det siger kunderne' },
       { link: '#contact', label: 'Kontakt' },
     ],
     hero: {
@@ -32,6 +32,42 @@ const CONSTANTS = {
           description: 'For den private som ønsker en plan og flot græsplane.',
         },
       ],
+    },
+    services: {
+      title: 'Vores ydelser',
+      description:
+        'Herunder en oversigt over alle vores services. Hvis du måtte have flere spørgsmål, er du velkommen til at kontakte os.',
+    },
+    gallery: {
+      title: 'Galleri',
+      description: 'Herunder er udvalg af billeder taget af vores arbejde.',
+    },
+    reviews: {
+      title: 'Kundeudtalelser',
+    },
+    contact: {
+      title: 'Kontakt Os',
+      description:
+        'Du kan kontakte os med informationerne nedenfor, eller skrive en besked til os med kontaktformularen.',
+      info: [
+        { title: 'Adresse', items: ['Odshøjvej 1G', '8800 Viborg'] },
+        {
+          title: 'Åbningstid',
+          items: ['Mandag - Lørdag: 07:00 - 18:00', 'Søndag: LUKKET'],
+        },
+        {
+          title: 'Kontakt Information',
+          items: [
+            'Telefon: +45 12 34 56 78',
+            'Email: info@viborghaveservice.org',
+          ],
+        },
+      ],
+      form: {
+        title: 'Send os en besked',
+        inputs: ['Navn', 'Email', 'Besked'],
+        button: 'Send Besked',
+      },
     },
   },
 }

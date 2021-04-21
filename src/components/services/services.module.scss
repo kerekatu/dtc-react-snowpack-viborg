@@ -1,0 +1,44 @@
+.services {
+  min-height: min-content;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 10rem 0;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+
+    & > p {
+      max-width: 50rem;
+    }
+  }
+
+  .services_list {
+    display: flex;
+    justify-content: center;
+    gap: 0 5rem;
+    margin-top: 7rem;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    & img {
+      display: block;
+      height: 18rem;
+      border-radius: 100%;
+      border: 0.8rem solid var(--color-primary-2);
+    }
+
+    & p {
+      font-size: 1.4rem;
+    }
+  }
+}
